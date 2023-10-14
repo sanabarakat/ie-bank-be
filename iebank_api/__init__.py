@@ -23,14 +23,12 @@ elif os.getenv('ENV') == 'uat':
     print("Running in UAT mode")
     app.config.from_object('config.UATConfig')
 
-
 db = SQLAlchemy(app)
 
 from iebank_api.models import Account
 
 with app.app_context():
     db.create_all()
-
 CORS(app)
 
 from iebank_api import routes

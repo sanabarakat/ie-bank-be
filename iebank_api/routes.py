@@ -2,13 +2,19 @@ from flask import Flask, request
 from iebank_api import db, app
 from iebank_api.models import Account
 
-
 @app.route('/')
 def hello_world():
+    # app.logger.debug('This is a debug log message')
+    # app.logger.info('This is an information log message')
+    # app.logger.warn('This is a warning log message')
+    # app.logger.error('This is an error message')
+    # app.logger.critical('This is a critical message')
+    app.logger.debug('Route / called')
     return 'Hello, World!'
 
 @app.route('/skull', methods=['GET'])
 def skull():
+    app.logger.debug('Route /skull GET called')
     text = 'Hi! This is the BACKEND SKULL! 💀 '
     text = text +'<br/>Database URL:' + db.engine.url.database
     if db.engine.url.host:
@@ -26,9 +32,9 @@ def skull():
 def create_account():
     app.logger.debug('Route /accounts POST called')
     name = request.json['name']
-    currency = request.json['currency']
     country = request.json['country']
-    account = Account(name, currency,country)
+    currency = request.json['currency']
+    account = Account(name, currency, country)
     db.session.add(account)
     db.session.commit()
     return format_account(account)
