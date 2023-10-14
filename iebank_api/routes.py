@@ -9,7 +9,6 @@ def hello_world():
 
 @app.route('/skull', methods=['GET'])
 def skull():
-    app.logger.debug('Route /skull GET called')
     text = 'Hi! This is the BACKEND SKULL! 💀 '
     text = text +'<br/>Database URL:' + db.engine.url.database
     if db.engine.url.host:
