@@ -16,6 +16,7 @@ permissions:
 env:
   BACKEND_WEBAPP_DEV: juni-be-dev
   BACKEND_WEBAPP_UAT: juni-be-uat
+  BACKEND_WEBAPP_PROD: juni-be-prod
   source_branch_name: ${{ github.ref }}
   pr_target_branch_name: ${{ github.base_ref }}
 
