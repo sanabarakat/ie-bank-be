@@ -34,3 +34,21 @@ def test_account_default_status():
     """
     account = Account('John Doe', '€', 'Spain')
     assert account.status == 'Active'
+
+def test_account_default_status():
+    """
+    GIVEN a new Account
+    WHEN a new Account is created
+    THEN check that the default status is 'Active'
+    """
+    account = Account('Juni', '€', 'Spain')
+    assert account.name == 'Juni'
+
+def test_account_country():
+    """
+    GIVEN a new Account
+    WHEN a new Account is created
+    THEN check that the default status is 'Spain'
+    """
+    account = Account('Juni', '€', 'Lebanon')
+    assert account.country == 'Lebanon'
