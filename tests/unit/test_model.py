@@ -44,7 +44,7 @@ def test_account_default_status():
     account = Account('Juni', '€', 'Spain')
     assert account.name == 'Juni'
 
-def test_account_country();
+def test_account_country():
     """
     GIVEN a new Account
     WHEN a new Account is created
