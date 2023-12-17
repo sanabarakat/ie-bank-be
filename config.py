@@ -38,3 +38,5 @@ class UATConfig(Config):
     dbname=os.getenv('DBNAME')
     )
     DEBUG = False
+
+    
