@@ -24,7 +24,7 @@ elif os.getenv('ENV') == 'uat':
     app.config.from_object('config.UATConfig')
 elif os.getenv('ENV') == 'prod':
     print("Running in production mode")
-    app.config.from_object('config.DevelopmentConfig')
+    app.config.from_object('config.ProductConfig')
 
 db = SQLAlchemy(app)
 
