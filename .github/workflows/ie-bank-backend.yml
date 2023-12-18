@@ -113,7 +113,7 @@ jobs:
     needs: [build, deploy-dev, deploy-uat]
     # if: ${{ pr_target_branch_name == 'refs/heads/main' }} #deploys only on PR to main branch
     environment:
-      name: 'User Acceptance Testing'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
